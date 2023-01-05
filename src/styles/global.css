@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --input-bg-color: #e6e6e6;
+  --button-bg-color: #ea4c89;
+  --button-color: #ffffff;
+  --card-bg-color: #735bf2;
+  --card-color: #ffffff;
+}
+
+body,
+input,
+button {
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+}

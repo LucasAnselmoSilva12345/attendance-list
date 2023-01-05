@@ -1,0 +1,16 @@
+.container-card {
+  width: 50%;
+  height: 100px;
+  margin-bottom: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card-bg-color);
+  color: var(--card-color);
+}
+
+.container-card strong {
+  font-size: 1.125rem;
+}
