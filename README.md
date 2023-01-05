@@ -20,6 +20,10 @@ In this project, the following technologies were used:
 
 This project if it consists of putting into practice the teachings learned about the React JS library.
 
+## Deploy of this project
+
+- [https://attendancelist.netlify.app/](https://attendancelist.netlify.app/)
+
 
 ## How to execute this project
 
