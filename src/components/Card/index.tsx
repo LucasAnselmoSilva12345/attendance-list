@@ -1,6 +1,11 @@
 import './styles.css';
 
-export function Card({ name, time }) {
+export type CardProps = {
+  name: string;
+  time: string;
+};
+
+export function Card({ name, time }: CardProps) {
   return (
     <div className="container-card">
       <strong>{name}</strong>
