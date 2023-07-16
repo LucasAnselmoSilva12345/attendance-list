@@ -4,10 +4,20 @@ import './styles.css';
 
 import { Card, CardProps } from '../../components/Card';
 
+type APIResponseProps = {
+  name: string;
+  avatar_url: string;
+};
+
+type UserProps = {
+  name: string;
+  avatar_url: string;
+};
+
 export function Home() {
   const [studentName, setStudentName] = useState('');
   const [students, setStudents] = useState<CardProps[]>([]);
-  const [user, setUser] = useState({ name: '', avatar: '' });
+  const [user, setUser] = useState<UserProps>({} as UserProps);
 
   function handleAddStudent() {
     const newStudent = {
@@ -27,10 +37,10 @@ export function Home() {
       const response = await fetch(
         'https://api.github.com/users/LucasAnselmoSilva12345'
       );
-      const data = await response.json();
+      const { name, avatar_url } = (await response.json()) as APIResponseProps;
       setUser({
-        name: data.name,
-        avatar: data.avatar_url,
+        name,
+        avatar_url,
       });
     }
 
@@ -43,7 +53,10 @@ export function Home() {
         <h1>Lista de presença</h1>
         <div className="dataProfile">
           <strong>{user.name}</strong>
-          <img src={user.avatar} alt="Foto de perfil da rede social GitHub" />
+          <img
+            src={user.avatar_url}
+            alt="Foto de perfil da rede social GitHub"
+          />
         </div>
       </header>
       <input
