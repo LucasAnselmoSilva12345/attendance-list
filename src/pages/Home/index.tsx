@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import './styles.css';
-
 import { Card, CardProps } from '../../components/Card';
 
 type APIResponseProps = {
@@ -48,23 +46,29 @@ export function Home() {
   }, []);
 
   return (
-    <div id="container">
-      <header className="header-container">
-        <h1>Attendance list</h1>
-        <div className="dataProfile">
-          <strong>{user.name}</strong>
+    <div className="flex flex-col items-center">
+      <header className="w-3/4 md:w-1/2 mt-84 mx-0 mb-6 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-astral-950">Attendance list</h1>
+        <div className="flex items-center">
+          <strong className="hidden font-normal lg:block">{user.name}</strong>
           <img
+            className="w-60 h-60 ml-2 rounded-30"
             src={user.avatar_url}
             alt="Foto de perfil da rede social GitHub"
           />
         </div>
       </header>
       <input
+        className="w-3/4 md:w-1/2 p-6 rounded-md border-none bg-astral-50"
         type="text"
         placeholder="Enter your name..."
         onChange={(e) => setStudentName(e.target.value)}
       />
-      <button type="button" onClick={handleAddStudent}>
+      <button
+        className="w-3/4 md:w-1/2 mt-3 mx-0 mb-84 p-6 font-bold rounded-md border-none cursor-pointer transition-opacity bg-astral-600 text-white hover:opacity-80"
+        type="button"
+        onClick={handleAddStudent}
+      >
         Send
       </button>
 
