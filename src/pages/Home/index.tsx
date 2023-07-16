@@ -50,7 +50,7 @@ export function Home() {
   return (
     <div id="container">
       <header className="header-container">
-        <h1>Lista de presença</h1>
+        <h1>Attendance list</h1>
         <div className="dataProfile">
           <strong>{user.name}</strong>
           <img
@@ -61,11 +61,11 @@ export function Home() {
       </header>
       <input
         type="text"
-        placeholder="Digite seu nome..."
+        placeholder="Enter your name..."
         onChange={(e) => setStudentName(e.target.value)}
       />
       <button type="button" onClick={handleAddStudent}>
-        Adicionar
+        Send
       </button>
 
       {students.map((student) => (
