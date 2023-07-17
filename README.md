@@ -2,7 +2,7 @@
 
 ## About this project
 
-This project is the attendance list app web, where the user answers the form, confirming your presence.
+This project is the attendance list app web.
 
 ## Technologies used in this project
 
@@ -22,7 +22,7 @@ This project if it consists of putting into practice the teachings learned about
 
 ## Deploy of this project
 
-- [https://attendancelist.netlify.app/](https://attendancelist.netlify.app/)
+- [https://attendance-list.pages.dev/](https://attendance-list.pages.dev/)
 
 
 ## How to execute this project
