@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { Card, CardProps } from '../../components/Card';
 
@@ -32,16 +33,19 @@ export function Home() {
 
   useEffect(() => {
     async function getUserDataOfGitHub() {
-      const response = await fetch(
-        'https://api.github.com/users/LucasAnselmoSilva12345'
-      );
-      const { name, avatar_url } = (await response.json()) as APIResponseProps;
-      setUser({
-        name,
-        avatar_url,
-      });
+      try {
+        const response = await axios.get(
+          'https://api.github.com/users/LucasAnselmoSilva12345'
+        );
+        const { name, avatar_url } = response.data as APIResponseProps;
+        setUser({
+          name,
+          avatar_url,
+        });
+      } catch (error: any) {
+        console.log(error);
+      }
     }
-
     getUserDataOfGitHub();
   }, []);
 
