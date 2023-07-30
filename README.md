@@ -1,8 +1,10 @@
 # Attendance List
 
-## About this project
+This project is an attendance list web application, developed to practice the teachings learned about the React JS library.
 
-This project is the attendance list app web.
+## Deploy of this project
+
+- [https://attendance-list.pages.dev/](https://attendance-list.pages.dev/)
 
 ## Technologies used in this project
 
@@ -11,19 +13,16 @@ In this project, the following technologies were used:
 ### Front-end
 
 - [React](https://pt-br.reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ### Back-end
 
 - [API of GitHub](https://api.github.com/LucasAnselmoSilva12345/)
 
-## Purpose of this project
+### Test
 
-This project if it consists of putting into practice the teachings learned about the React JS library.
-
-## Deploy of this project
-
-- [https://attendance-list.pages.dev/](https://attendance-list.pages.dev/)
-
+- [Jest](https://jestjs.io/docs/tutorial-react)
+- [React Testing Library](https://testing-library.com/)
 
 ## How to execute this project
 
@@ -53,7 +52,7 @@ Note: To perform the command execution in the next step, ensure that you have [n
 
 $ npm install
 
-ou
+or
 
 $ yarn
 
@@ -77,7 +76,7 @@ To open the project in the Visual Studio Code.
 
 $ npm run dev
 
-ou
+or
 
 yarn dev
 
@@ -91,4 +90,16 @@ To execute the project
 
 $ http://localhost:3000/
 
+```
+
+To execute unit or integration tests  
+
+7. Execute this command in your terminal:
+
+```sh
+$ npm test
+
+or
+
+yarn test
 ```
