@@ -1,22 +1,10 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
+import { useState } from 'react';
 import { Card, CardProps } from '../../components/Card';
-
-type APIResponseProps = {
-  name: string;
-  avatar_url: string;
-};
-
-type UserProps = {
-  name: string;
-  avatar_url: string;
-};
+import { ProfileGitHub } from '../../components/ProfileGitHub';
 
 export function Home() {
   const [studentName, setStudentName] = useState('');
   const [students, setStudents] = useState<CardProps[]>([]);
-  const [user, setUser] = useState<UserProps>({} as UserProps);
 
   function handleAddStudent() {
     const newStudent = {
@@ -31,36 +19,11 @@ export function Home() {
     setStudents((rest) => [...rest, newStudent]);
   }
 
-  useEffect(() => {
-    async function getUserDataOfGitHub() {
-      try {
-        const response = await axios.get(
-          'https://api.github.com/users/LucasAnselmoSilva12345'
-        );
-        const { name, avatar_url } = response.data as APIResponseProps;
-        setUser({
-          name,
-          avatar_url,
-        });
-      } catch (error: any) {
-        console.log(error);
-      }
-    }
-    getUserDataOfGitHub();
-  }, []);
-
   return (
     <div className="flex flex-col items-center">
       <header className="w-3/4 md:w-1/2 mt-84 mx-0 mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-astral-950">Attendance list</h1>
-        <div className="flex items-center">
-          <strong className="hidden font-normal lg:block">{user.name}</strong>
-          <img
-            className="w-60 h-60 ml-2 rounded-30"
-            src={user.avatar_url}
-            alt="Foto de perfil da rede social GitHub"
-          />
-        </div>
+        <ProfileGitHub />
       </header>
       <input
         className="w-3/4 md:w-1/2 p-6 rounded-md border-none bg-astral-50"
